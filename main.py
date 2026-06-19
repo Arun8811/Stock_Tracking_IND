@@ -13,8 +13,8 @@ st.title("📊 Stock Tracking IND")
 df = pd.DataFrame({
   'Stock Name': ["Aditya Birla Capital", "CIPLA", "DRREDDY", "ITC",],
   'Symbol': ["ABCAPITAL", "CIPLA", "DRREDDY", "ITC"],
-  'CMP': [140, 1100, 1500, 200],
   'Buy Price': [152, 1200, 1300, 500], 
+  'CMP': [140, 1100, 1500, 200],
 })
 
 
