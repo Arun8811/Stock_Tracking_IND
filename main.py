@@ -12,13 +12,10 @@ st.badge("Disclaimer: Invest after consulting with a SEBI registered financial a
 #Google Sheet URL
 url = "https://docs.google.com/spreadsheets/d/1MK8GYDKYCrAnClUSMuolPxiju07TSDLnOvVtJIbcXbE/edit?gid=979918604#gid=979918604"
 
-#Read directly into a DataFrame
-df = pd.DataFrame({
-  'Stock Name': ["Aditya Birla Capital", "CIPLA", "DRREDDY", "ITC",],
-  'Symbol': ["ABCAPITAL", "CIPLA", "DRREDDY", "ITC"],
-  'CMP': [140, 1100, 1500, 200],
-  'Buy Price': [152, 1200, 1300, 500], 
-})
+#Read from Googlesheet into Dataframe
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+data = conn.read(spreadsheet=url, usecols=[0, 1, 2, 3, 4])
 
 
 # Add recommendation column
